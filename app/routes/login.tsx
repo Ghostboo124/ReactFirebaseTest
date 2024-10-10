@@ -17,12 +17,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDv9jYRD4xUq3oY4U0onZ4zs1L7UPNUxPw",
-  authDomain: "remix-joke.firebaseapp.com",
-  projectId: "remix-joke",
-  storageBucket: "remix-joke.appspot.com",
-  messagingSenderId: "770724803984",
-  appId: "1:770724803984:web:b87dd7a76ae44484d6ef15",
+  apiKey: process.env.FIREBASE_API,
+  authDomain: process.env.AUTH_DOMAIN,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
