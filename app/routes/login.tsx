@@ -138,10 +138,11 @@ export const action = async ({ request }: ActionFunctionArgs) => {
         .then((userCredential) => {
           // Signed up
           const userCreate = userCredential.user;
-          if (userCreate.displayName !== null) {
-            return createUserSession(userCreate.displayName, redirectTo);
+          if (userCreate.email !== null) {
+            return createUserSession(userCreate.email, redirectTo);
+          } else {
+            throw new Error("User email is null");
           }
-          return createUserSession(userCreate.email, redirectTo);
           // ...
         })
         .catch((error) => {
